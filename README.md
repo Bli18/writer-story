@@ -64,6 +64,30 @@ out.* Compatibility is knowledge the player earns by writing, not a stat to read
 off. Underneath it, commitment: how long this book gets, and the completion
 ceiling that follows from that choice.
 
+![Choosing a channel](docs/screenshots/08-publish-channels.png)
+
+The manuscript exists before the question of where to send it — the reverse of
+the usual sim order, where you pick a market slot and then fill it. Channels are
+places with personalities rather than rungs on a ladder: a thirteenth-year
+manuscript with a 91 average can still be posted on the community notice board,
+or read aloud to the old man downstairs. A channel can also decline a form — the
+web platform on screen is refusing a short story, and explains itself in the
+world's voice, not an error message. And *Save to Shelf (don't publish)* is a
+real button: holding a finished work back is a strategy the game respects, not a
+missing feature.
+
+![The literary world](docs/screenshots/07-literary-peers.png)
+
+Three long-running relationships — a mentor, a friend, a rival — with about a
+hundred hand-written story beats between them, every one triggered by
+conditions, none by a timeline. The game decides which literary lane you are
+actually in from your last few works, with hysteresis so one experiment does not
+re-label you, and the storylines bend around that. The same three people appear
+a second time in the web-fiction scene below, wearing different hats — the
+mentor moonlights as an editor, the rival grinds out chapters, the friend turns
+out to be a top patron. Which side of them you meet depends on where your own
+career put you.
+
 ![The in-game playtest logger](docs/screenshots/06-playtest-tool.png)
 
 Tooling I built for myself. At any moment in play, one key opens this: a tag
@@ -194,6 +218,16 @@ decision eliminated an entire class of bug — "edited the strings, forgot to
 recompile, shipped the old text" — by making the stale artifact impossible to
 commit.
 
+![The same study, in Chinese](docs/screenshots/09-creation-zh.png)
+
+The same build in Chinese — the game's native language, in which all of its
+prose is written first. Nothing here is a translation pass over an English UI:
+labels measure themselves against the current language at runtime (the
+reputation words, the dock buttons, the stage titles all size to what they
+actually say), and the layout test gate re-runs per language, so a label that
+fits Chinese but overflows in English or Japanese is a failing build, not a
+support ticket.
+
 **Determinism where it matters.** Anything that needs to be reproducible —
 market era rotation, monthly rankings, contest opponents — is a pure function of
 `(seed, month)` rather than accumulated random state. Reopening a window shows
@@ -211,9 +245,12 @@ progressively nastier UI gates:
 
 - **Boot gate** — the main scene loads without error.
 - **Fit gate** — every window and multi-step flow is measured at 720p, 1080p and
-  ultrawide. Windows may not exceed the screen; the primary action button may not
-  drift between steps of a flow; the bottom dock must stay full-width. Any new
-  window has to be added to this probe to be merged.
+  ultrawide, and the whole pass repeats once per language (Chinese, English,
+  Japanese — translations differ in width, and a green Chinese run proves nothing
+  about the other two). Windows may not exceed the screen; the primary action
+  button may not drift between steps of a flow; the bottom dock must stay
+  full-width; no label may be clipped by its own container. Any new window has to
+  be added to this probe to be merged.
 - **Modal-layer gate** — the game has two independent overlay stacks, and they
   must be mutually exclusive. When they are not, the player gets a window they
   cannot dismiss. The probe asserts the invariant directly rather than hoping
