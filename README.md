@@ -23,12 +23,55 @@ last section).
 
 ## Screenshots
 
-> _Placeholder — screenshots and a short gameplay GIF go in `docs/screenshots/`._
+![The study, year thirteen](docs/screenshots/01-main-view.png)
+
+The whole game on one screen, thirteen years into a run. The four reputations —
+reader, critic, commercial, historical — are shown as words rather than numbers:
+*In Demand*, *Critics Approve*, *Bestseller*, *In Literary History*. The values
+exist underneath and drive everything, but the player is never asked to optimize
+a figure they cannot feel. The line above the desk is the character's own
+thought, not a system message.
+
+![The writing screen](docs/screenshots/02-writing.png)
+
+A work in progress is six independent dimensions, not one quality score, and
+they move at different rates depending on what was chosen and who the writer has
+become. The chip row restates the combination and its compatibility tier while
+you write. On the right, the log of the last few months — awards, offers,
+relationships shifting — is the only place the fifteen-year shape is visible
+while you are inside it.
 
 | | |
 |---|---|
-| _Writing screen_ | _Monthly review_ |
-| _Publishing & reception_ | _Ending sequence_ |
+| ![Genre](docs/screenshots/03-create-genre.png) | ![Theme](docs/screenshots/04-create-theme.png) |
+
+Step one and step two of the core decision. Twelve genres, four still locked —
+progression is gated by what you have actually written, not by a level. Each
+card carries a line in the game's own voice ("Low bar, fast whetstone — one
+thing, told in one breath") instead of a stat block, while the numbers that
+follow from the choice sit above it, separately.
+
+Step two is why this is a wizard and not three dropdowns: the theme list is
+**scoped by the genre you just picked** — "the soils Short Story can till — 15
+in all." Each axis narrows the next.
+
+![The commitment step](docs/screenshots/05-create-preview.png)
+
+The last step before writing begins. Behind the three-axis combination sit 532
+hand-curated compatibility rows in four tiers — and here the game says
+*Compatibility: Unknown. You haven't walked this road yet — write it to find
+out.* Compatibility is knowledge the player earns by writing, not a stat to read
+off. Underneath it, commitment: how long this book gets, and the completion
+ceiling that follows from that choice.
+
+![The in-game playtest logger](docs/screenshots/06-playtest-tool.png)
+
+Tooling I built for myself. At any moment in play, one key opens this: a tag
+(bug / confusing / boring / delight), a free-text note, and an automatically
+attached screenshot plus a full dump of game state at that instant. Roughly
+fifty rounds of playtesting went through it. It exists because "something felt
+off around year twelve" is not a bug report — and because a note with a state
+snapshot attached is something an agent can actually be pointed at.
 
 ---
 
