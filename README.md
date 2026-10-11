@@ -317,7 +317,7 @@ removing one dice roll re-sequences every roll after it; the only honest
 measurement is of the window in which a mechanism is actually active. Change a
 tuning file without re-running the measurement and the harness goes red.
 
-*Coverage.* Ten different play styles, several runs each, produce a matrix of
+*Coverage.* Thirteen different play styles, several runs each, produce a matrix of
 which content actually fired. An event that stays silent across two consecutive
 campaigns goes on an orphan list. Several entries on that list turned out to be
 unreachable for a reason nobody had intended.
